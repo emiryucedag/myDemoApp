@@ -54,12 +54,12 @@ public class App {
 
             String input3 = req.queryParams("input3");
             java.util.Scanner sc3 = new java.util.Scanner(input3);
-           // sc3.useDelimiter("[;\r\n]+");
+            sc3.useDelimiter("[;\r\n]+");
             String str3=sc3.next();
 
             String input4 = req.queryParams("input4");
             java.util.Scanner sc4 = new java.util.Scanner(input4);
-
+            sc4.useDelimiter("[;\r\n]+");
             String str4=sc4.next();
 
 
