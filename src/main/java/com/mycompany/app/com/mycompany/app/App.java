@@ -39,24 +39,35 @@ public class App {
             }
             System.out.println(inputList);
 
-
-            String input2 = req.queryParams("input2").replaceAll("\\s","");
-            int input2AsInt = Integer.parseInt(input2);
-
-            boolean result ;
-
-            int[] intArray = new int[inputList.size()];
-            for (int i = 0; i < inputList.size(); i++) {
-                intArray[i] = inputList.get(i); // ArrayList'ten her bir öğeyi int dizisine kopyala
+            String input2 = req.queryParams("input2");
+            java.util.Scanner sc2 = new java.util.Scanner(input2);
+            sc2.useDelimiter("[;\r\n]+");
+            int[] intArray= new int[100];
+            int counter=0;
+            while (sc2.hasNext())
+            {
+                int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+                intArray[counter]=value;
+                counter++;
             }
+            System.out.println(intArray);
 
-            int answer=App.addAndMultiply(inputList, intArray,"hello","world");
+            String input3 = req.queryParams("input3");
+            java.util.Scanner sc3 = new java.util.Scanner(input3);
+            sc3.useDelimiter("[;\r\n]+");
+            String str3=sc3.next();
 
-            if (answer==0) result=false;
-                    else result=true;
+            String input4 = req.queryParams("input4");
+            java.util.Scanner sc4 = new java.util.Scanner(input4);
+            sc4.useDelimiter("[;\r\n]+");
+            String str4=sc4.next();
+
+
+            int answer=App.addAndMultiply(inputList, intArray,str3,str4);
+
 
             Map map = new HashMap();
-            map.put("result", result);
+            map.put("result", answer);
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
