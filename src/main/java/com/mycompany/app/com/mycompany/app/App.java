@@ -34,7 +34,7 @@ public class App {
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
             while (sc1.hasNext())
             {
-                int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+                int value = Integer.parseInt(sc1.next());
                 inputList.add(value);
             }
             System.out.println(inputList);
@@ -46,7 +46,7 @@ public class App {
             int counter=0;
             while (sc2.hasNext())
             {
-                int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+                int value = Integer.parseInt(sc2.next());
                 intArray[counter]=value;
                 counter++;
             }
@@ -54,12 +54,12 @@ public class App {
 
             String input3 = req.queryParams("input3");
             java.util.Scanner sc3 = new java.util.Scanner(input3);
-            sc3.useDelimiter("[;\r\n]+");
+           // sc3.useDelimiter("[;\r\n]+");
             String str3=sc3.next();
 
             String input4 = req.queryParams("input4");
             java.util.Scanner sc4 = new java.util.Scanner(input4);
-            sc4.useDelimiter("[;\r\n]+");
+
             String str4=sc4.next();
 
 
