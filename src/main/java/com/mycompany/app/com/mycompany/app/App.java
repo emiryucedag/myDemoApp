@@ -34,7 +34,7 @@ public class App {
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
             while (sc1.hasNext())
             {
-                int value = Integer.parseInt(sc1.next());
+                int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
                 inputList.add(value);
             }
             System.out.println(inputList);
@@ -46,7 +46,7 @@ public class App {
             int counter=0;
             while (sc2.hasNext())
             {
-                int value = Integer.parseInt(sc2.next());
+                int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
                 intArray[counter]=value;
                 counter++;
             }
